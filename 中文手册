@@ -1,1 +1,45 @@
-删除背景
+删除-bg
+Python API包装器，用于使用remove.bg的API从图片中移除背景
+
+执照
+此代码是根据MIT许可授权的。有关更多详细信息，请参见此处。
+
+安装
+pip install removebg
+
+如何使用
+remove_background_from_img_file
+参数	需要	描述
+img_file_path	ÿ	图像文件的路径
+尺寸	ñ	输出图像的大小（常规= 0.25 MP，hd = 4 MP，4k =最高10 MP）。默认值为“常规”
+bg_color	ñ	添加纯色背景。可以是十六进制颜色代码（例如81d4fa，fff）或颜色名称（例如绿色）。
+代码示例：
+从 removebg 导入 RemoveBg
+
+rmbg = RemoveBg（“ YOUR-API-KEY ”，“ error.log ”）
+rmbg.remove_background_from_img_file（“ joker.jpg ”）
+remove_background_from_img_url
+参数	需要	描述
+img_url	ÿ	图片的网址
+尺寸	ñ	输出图像的大小（常规= 0.25 MP，hd = 4 MP，4k =最高10 MP）。默认值为“常规”
+new_file_name	ñ	移除了背景的图像的新文件名
+bg_color	ñ	添加纯色背景。可以是十六进制颜色代码（例如81d4fa，fff）或颜色名称（例如绿色）。
+代码示例：
+从 removebg 导入 RemoveBg
+
+rmbg = RemoveBg（“ YOUR-API-KEY ”，“ error.log ”）
+rmbg.remove_background_from_img_url（“ http://www.example.com/some_image.jpg ”）
+remove_background_from_base64_img
+参数	需要	描述
+base64_img	ÿ	base64图像字符串
+尺寸	ñ	输出图像的大小（常规= 0.25 MP，hd = 4 MP，4k =最高10 MP）。默认值为“常规”
+new_file_name	ñ	移除了背景的图像的新文件名
+bg_color	ñ	添加纯色背景。可以是十六进制颜色代码（例如81d4fa，fff）或颜色名称（例如绿色）。
+代码示例：
+从 removebg 导入 RemoveBg
+ 导入 base64
+
+rmbg = RemoveBg（“ YOUR-API-KEY ”，“ error.log ”），
+ 其中 open（“ joker.jpg ”，“ rb ”）作为 image_file：
+	encoded_string = base64.b64encode（image_file.read（））
+    rmbg.remove_background_from_base64_img（已编码字符串）
